@@ -43,7 +43,6 @@ body {
   to { opacity: 0; }
 }
 
-
   section {
     scroll-margin-top: 40px; /* .main-navの高さ + 余裕 */  
     max-width: 1300px;
@@ -247,5 +246,68 @@ body {
   form label, input, textarea {
     margin-bottom: 10px;
     font-size: 1em;
+  }
+  
+  @media screen and (max-width: 768px) {
+
+    /* 全体の余白調整 */
+    section {
+      padding: 40px 15px;
+    }
+  
+    /* heroセクションの高さ調整 */
+    .hero-artists {
+      flex-wrap: wrap;
+      height: auto;
+    }
+  
+    .hero-artists img {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* ナビゲーションの並び変え */
+    .main-nav ul {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    /* 出展者カードを1列にする */
+    .artist {
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .artist-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    /* ギャラリー画像のサイズ調整 */
+    #gallery1 img {
+      width: 150px;
+    }
+  
+    #gallery2 img {
+      width: 220px;
+    }
+  
+    /* アクセス欄の縦並び */
+    .access-wrapper {
+      flex-direction: column;
+    }
+  
+    .access-map,
+    .access-text {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  
+    .access-map iframe {
+      width: 100% !important;
+    }
   }
   
