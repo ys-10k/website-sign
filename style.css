@@ -5,6 +5,44 @@ body {
     margin: 0;
     padding: 0;
   }
+  
+ /* スプラッシュ全体の初期スタイル */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 2s ease forwards;
+}
+
+#splash.fade-out {
+  animation: fadeOut 2s ease forwards;
+}
+
+#splash img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* フェードアウトアニメーション */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 
   section {
     scroll-margin-top: 40px; /* .main-navの高さ + 余裕 */  
@@ -83,8 +121,9 @@ body {
   .artist-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1300px; /* 横幅の目安 */
+    gap: 10px;
+    padding: 0 0px;  /* 両端に少し余白を */
+    max-width: 100%; /* 横幅の目安 */
     margin: auto;
     justify-content: center;
   }   
@@ -97,7 +136,7 @@ body {
     box-sizing: border-box;
     color: #eee;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     align-items: center;
   }
   
