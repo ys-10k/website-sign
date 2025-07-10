@@ -11,8 +11,11 @@
       const splash = document.getElementById('splash');
       if (splash) {
         splash.classList.add('fade-out');
+
+        // フェードアウトが終わったら非表示＋スクロール許可
         setTimeout(() => {
           splash.style.display = 'none';
+          document.body.classList.remove('no-scroll'); // ← ここでスクロール復活
         }, 2000); // アニメーション時間と同じだけ待って非表示に
       }
     }, 3000); // 表示しておく時間
